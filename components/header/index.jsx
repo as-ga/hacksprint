@@ -4,7 +4,7 @@ import { useSession } from "next-auth/react";
 
 const Header = ({ children }) => {
   const session = useSession();
-  const user = session?.data?.user || {};
+  const user = session?.data?.user;
 
   return (
     <>
