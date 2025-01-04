@@ -19,11 +19,9 @@ const UserSchema = new mongoose.Schema(
       minlength: [6, "Password must be at least 6 characters"],
       required: [true, "Please enter your password!"],
     },
-    role: { type: String, default: "User", enum: ["User", "Admin"] },
-    avatar: { type: String },
+    role: { type: String, default: "user", enum: ["user", "admin"] },
   },
   { timestamps: true }
 );
-
 export const UserModel =
   mongoose.models.User || mongoose.model("User", UserSchema);
