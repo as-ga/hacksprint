@@ -56,7 +56,7 @@ export default function AIAssistantPage() {
       const newMessages = [...messages, { sender: "user", text: MessageInput }];
       setMessages(newMessages);
 
-      const response = await axios.post("/api/chat", {
+      const response = await axios.post("/api/ai-assistant", {
         message: MessageInput,
         conversation: newMessages, // Include the entire conversation history
       });
