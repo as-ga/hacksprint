@@ -60,6 +60,11 @@ function Sidebar() {
             </Link>
           </li>
           <li className="mb-4">
+            <Link href="/profile" className="block p-4 bg-white text-primary hover:bg-primary hover:text-white transition transform hover:scale-105 duration-300">
+              Profile
+            </Link>
+          </li>
+          <li className="mb-4">
             <Link href="/resources" className="block p-4 bg-white text-primary hover:bg-primary hover:text-white transition transform hover:scale-105 duration-300">
               Resources
             </Link>
@@ -69,7 +74,21 @@ function Sidebar() {
               Performance
             </Link>
           </li>
-          {/* Add more links as needed */}
+          <li className="mb-4">
+            <Link href="/mock-tests" className="block p-4 bg-white text-primary hover:bg-primary hover:text-white transition transform hover:scale-105 duration-300">
+              Mock Tests
+            </Link>
+          </li>
+          <li className="mb-4">
+            <Link href="/forums" className="block p-4 bg-white text-primary hover:bg-primary hover:text-white transition transform hover:scale-105 duration-300">
+              Forums
+            </Link>
+          </li>
+          <li className="mb-4">
+            <Link href="/ai-assistant" className="block p-4 bg-white text-primary hover:bg-primary hover:text-white transition transform hover:scale-105 duration-300">
+              AI Assistant
+            </Link>
+          </li>
         </ul>
       </nav>
     </aside>
