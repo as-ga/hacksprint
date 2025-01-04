@@ -1,15 +1,15 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const UserSchema = new mongoose.Schema(
   {
     name: {
       type: String,
       trim: true,
-      required: [true, "Name is Required"],
+      required: [true, "Name is required"],
     },
     email: {
       type: String,
-      required: [true, "Email is Required"],
+      required: [true, "Email is required"],
       unique: true,
       trim: true,
       lowercase: true,
@@ -25,5 +25,5 @@ const UserSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export const UserModel =
-  mongoose.models.User || mongoose.model("User", UserSchema);
+const UserModel = mongoose.models.User || mongoose.model("User", UserSchema);
+export default UserModel;
