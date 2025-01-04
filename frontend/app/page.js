@@ -36,17 +36,33 @@ export default function Home() {
   }
 
   return (
-    <div className="p-6">
-      <h2 className="text-3xl font-bold mb-4">Dashboard</h2>
-      <p className="text-xl mb-8">Message from server: {message}</p>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <DashboardCard title="Profile" description="View and edit your profile" link="/profile" />
-        <DashboardCard title="Resources" description="Access learning resources" link="/resources" />
-        <DashboardCard title="Performance" description="Track your performance" link="/performance" />
-        <DashboardCard title="Mock Tests" description="Take mock tests" link="/mock-tests" />
-        <DashboardCard title="Forums" description="Participate in forums" link="/forums" />
-        <DashboardCard title="AI Assistant" description="Get help from AI Assistant" link="/ai-assistant" />
-        {/* Add more cards as needed */}
+    <div className="min-h-screen flex flex-col">
+      <TopBar />
+      <div className="p-6 flex-1">
+        <p className="text-xl mb-8">Message from server: {message}</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <DashboardCard title="Profile" description="View and edit your profile" link="/profile" />
+          <DashboardCard title="Resources" description="Access learning resources" link="/resources" />
+          <DashboardCard title="Performance" description="Track your performance" link="/performance" />
+          <DashboardCard title="Mock Tests" description="Take mock tests" link="/mock-tests" />
+          <DashboardCard title="Forums" description="Participate in forums" link="/forums" />
+          <DashboardCard title="AI Assistant" description="Get help from AI Assistant" link="/ai-assistant" />
+          {/* Add more cards as needed */}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function TopBar() {
+  return (
+    <div className="bg-primary text-white p-4 flex justify-between items-center">
+      <h1 className="text-2xl font-bold">My Dashboard</h1>
+      <div className="flex items-center">
+        <img src="/path/to/avatar.jpg" alt="User Avatar" className="w-10 h-10 rounded-full mr-4" />
+        <a href="/profile" className="text-white font-semibold hover:underline">
+          Profile
+        </a>
       </div>
     </div>
   );
