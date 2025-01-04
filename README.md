@@ -1,6 +1,3 @@
-# hacksprint
-HackSprint is a 5-day online hackathon focused on web development
-
 # My Next.js and Flask App
 
 This is a project that combines a Next.js frontend with a Flask backend. The frontend is built using Next.js, a React framework, while the backend is powered by Flask, a lightweight Python web framework.
