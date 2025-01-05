@@ -61,7 +61,7 @@ function Sidebar() {
     { name: "Mock Tests", slug: "/mock-tests" },
     { name: "Forums", slug: "/forums" },
     { name: "AI Assistant", slug: "/ai-assistant" },
-    { name: "Team", slug: "/team" },
+    // { name: "Team", slug: "/team" },
 
     // {name: "Performance", href: "/performance", slug: "/performance"},
     // {name: "Mock Tests", href: "/mock-tests", slug: "/mock-tests"},
