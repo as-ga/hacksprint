@@ -1,6 +1,8 @@
-# My Next.js and Flask App
+[<div><Img alt="LearnXcel" src='public/home.png'></div>](https://ai-study-assistant.vercel.app)
 
-This is a project that combines a Next.js frontend with a Flask backend. The frontend is built using Next.js, a React framework, while the backend is powered by Flask, a lightweight Python web framework.
+# LearnXcel
+
+This is a project that combines a `Next.js`. The frontend is built using Next.js, a React framework, while the backend is powered by Flask, a lightweight Python web framework.
 
 ## Locally Setup
 
