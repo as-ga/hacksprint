@@ -1,21 +1,18 @@
 import { NextResponse } from "next/server";
+import { getToken } from "next-auth/jwt";
 import { dbConnect } from "../../../lib/mongodb";
-// import jwt from 'jsonwebtoken';
 import { UserModel } from "../../../models/User";
 
 export async function GET(req) {
   await dbConnect();
-
-  const token = req.headers.get("Authorization")?.split(" ")[1];
+  const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
 
   if (!token) {
     return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
   }
 
   try {
-    // const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    const decoded = {};
-    const user = await UserModel.findById(decoded.userId);
+    const user = await UserModel.findById(token.sub);
 
     if (!user) {
       return NextResponse.json({ message: "User not found" }, { status: 404 });
