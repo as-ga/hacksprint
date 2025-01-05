@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
+import { usePathname } from "next/navigation";
 
 const Header = ({ children }) => {
   const session = useSession();
@@ -50,11 +51,43 @@ const Header = ({ children }) => {
 export { Header };
 
 function Sidebar() {
+  const pathname = usePathname();
+
+  const sidebar = [
+    { name: "Dashboard", slug: "/" },
+    { name: "Profile", slug: "/profile" },
+    { name: "Resources", slug: "/resources" },
+    { name: "Performance", slug: "/performance" },
+    { name: "Mock Tests", slug: "/mock-tests" },
+    { name: "Forums", slug: "/forums" },
+    { name: "AI Assistant", slug: "/ai-assistant" },
+    { name: "Team", slug: "/team" },
+
+    // {name: "Performance", href: "/performance", slug: "/performance"},
+    // {name: "Mock Tests", href: "/mock-tests", slug: "/mock-tests"},
+    // {name: "Forums", href: "/forums", slug: "/forums"},
+    // {name: "AI Assistant", href: "/ai-assistant", slug: "/ai-assistant"},
+    // {name: "Team", href: "/logout", slug: "/team"}
+  ];
+
   return (
     <aside className="w-64 bg-secondary text-white p-4">
       <nav>
-        <ul>
-          <li className="mb-4">
+        {sidebar.map(({ name, slug }) => (
+          <Link
+            key={name}
+            href={slug}
+            className={`mb-4 block p-4 transition transform hover:scale-105 duration-300 ${
+              pathname === slug
+                ? "bg-primary text-white hover:bg-white hover:text-primary"
+                : "bg-white text-primary hover:text-white hover:bg-primary"
+            }
+            `}
+          >
+            {name}
+          </Link>
+        ))}
+        {/* <li className="mb-4">
             <Link
               href="/"
               className="block p-4 bg-white text-primary hover:bg-primary hover:text-white transition transform hover:scale-105 duration-300"
@@ -110,7 +143,7 @@ function Sidebar() {
               AI Assistant
             </Link>
           </li>
-        </ul>
+        </ul> */}
       </nav>
     </aside>
   );
