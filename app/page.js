@@ -30,7 +30,7 @@ export default function Home() {
     {
       title: "AI Chatbot",
       description: "Interact with the AI chatbot",
-      link: "/ai-chatbot",
+      link: "/ai-assistant",
     },
   ];
 
