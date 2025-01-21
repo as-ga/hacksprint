@@ -1,4 +1,4 @@
-[<div><Img alt="LearnXcel" src='public/home.png'></div>](https://ai-study-assistant.vercel.app)
+[<div><Img alt="LearnXcel" src='public/home.png'></div>](https://learnxcel.vercel.app)
 
 # LearnXcel
 

@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function ResourcesPage() {
   const [resources, setResources] = useState([]);
@@ -8,20 +9,31 @@ export default function ResourcesPage() {
   useEffect(() => {
     const fetchResources = async () => {
       try {
-        const response = await fetch('/api/resources');
+        const response = await fetch("/api/resources");
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error("Network response was not ok");
         }
         const data = await response.json();
         setResources(data);
       } catch (err) {
-        console.error('Error fetching resources:', err);
-        setError('Failed to load resources');
+        console.error("Error fetching resources:", err);
+        setError("Failed to load resources");
       }
     };
 
     fetchResources();
   }, []);
+
+  // async function addResources() {
+  const addResources = async () => {
+    const result = await axios.post("/api/resources", {
+      name: "LearnXcel",
+      description:
+        "Combining learning with excellence. The Smart Learning Ecosystem App.",
+      link: "https://learnxcel.vercel.app",
+    });
+    alert(JSON.stringify(result.data));
+  };
 
   return (
     <div className="p-6">
@@ -43,6 +55,9 @@ export default function ResourcesPage() {
           </div>
         ))}
       </div>
+      <h1 onClick={addResources} className="text-blue-500 underline">
+        Add Resource
+      </h1>
     </div>
   );
 }
